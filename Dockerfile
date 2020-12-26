@@ -8,6 +8,7 @@ RUN adduser docker sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER docker
+WORKDIR /home/docker
 
 RUN sudo apt-get -qq update && \
   sudo DEBIAN_FRONTEND="nointeractive" apt-get -qq install -y git python3 python3-pip curl ffmpeg locales tzdata cmake
