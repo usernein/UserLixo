@@ -2,10 +2,19 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND="nointeractive"
 
-RUN apt-get -qq update && \
-  apt-get -qq install -y git python3 python3-pip curl ffmpeg locales tzdata
-RUN apt update && apt install -y neofetch
-RUN apt-get install -y build-essential && \
+RUN apt-get update \
+ && apt-get install -y sudo
+
+RUN adduser --disabled-password --gecos '' docker
+RUN adduser docker sudo
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+USER docker
+
+RUN sudo apt-get -qq update && \
+  sudo apt-get -qq install -y git python3 python3-pip curl ffmpeg locales tzdata
+RUN sudo apt update && sudo apt install -y neofetch
+RUN sudo apt-get install -y build-essential && \
   git clone https://github.com/dtcooper/fakehostname.git && \
   cd fakehostname && \
   make && make install
