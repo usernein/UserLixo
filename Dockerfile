@@ -3,7 +3,7 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND="nointeractive"
 
 RUN apt-get -qq update && \
-  apt-get -qq install -y git python3 python3-pip curl ffmpeg locales tzdata cmake gcc g++ python3-dev openssl libssl-dev libopus0 libopus-dev
+  apt-get -qq install -y git python3 python3-pip curl ffmpeg locales tzdata cmake gcc g++ gcc-8 g++-8 python3-dev openssl libssl-dev libopus0 libopus-dev
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 RUN apt update && apt install -y neofetch
 RUN apt-get install -y build-essential && \
