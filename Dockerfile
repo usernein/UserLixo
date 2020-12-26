@@ -26,7 +26,7 @@ WORKDIR ./UserLixo
 RUN pip3 install -U pip setuptools wheel
 RUN pip3 install -Ur requirements-heroku.txt
 
-RUN locale-gen en_US.UTF-8
+RUN sudo locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
