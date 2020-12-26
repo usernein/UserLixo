@@ -16,7 +16,7 @@ RUN sudo apt update && sudo apt install -y neofetch
 RUN sudo apt-get install -y build-essential && \
   git clone https://github.com/dtcooper/fakehostname.git && \
   cd fakehostname && \
-  make && make install
+  sudo make && sudo make install
 
 RUN git clone https://github.com/AmanoTeam/UserLixo /usr/src/app/Userlixo
 COPY . /usr/src/app/Userlixo
