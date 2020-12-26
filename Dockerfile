@@ -11,7 +11,7 @@ RUN apt install -y build-essential && \
   make && make install
 
 RUN curl -o cmake.tar.gz https://github.com/Kitware/CMake/releases/download/v3.19.2/cmake-3.19.2.tar.gz
-RUN tar -xzvf cmake.tar.gz && \
+RUN tar -xvf cmake.tar.gz && \
   cd cmake && ./configure && make && make install && cd ..
 
 RUN apt install -y gcc-8 g++-8
