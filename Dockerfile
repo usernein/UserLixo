@@ -3,7 +3,7 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND="nointeractive"
 
 RUN apt-get -qq update && \
-  apt- -qq install -y git python3 python3-pip curl ffmpeg locales tzdata python3-dev openssl libssl-dev libopus0 libopus-dev
+  apt -qq install -y git python3 python3-pip curl ffmpeg locales tzdata python3-dev openssl libssl-dev libopus0 libopus-dev
 RUN apt update && apt install -y neofetch
 RUN apt install -y build-essential && \
   git clone https://github.com/dtcooper/fakehostname.git && \
