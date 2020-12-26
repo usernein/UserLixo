@@ -24,8 +24,8 @@ COPY . ./UserLixo
 WORKDIR ./UserLixo
 
 ENV PATH="/home/docker/UserLixo/.local/bin:${PATH}"
-RUN pip3 install -U pip setuptools wheel
-RUN pip3 install -Ur requirements-heroku.txt
+RUN python3 -m pip install -U pip setuptools wheel
+RUN python3 -m pip install -Ur requirements-heroku.txt
 
 RUN sudo locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
