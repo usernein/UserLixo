@@ -16,11 +16,12 @@ RUN sudo apt update && sudo apt install -y neofetch
 RUN sudo apt-get install -y build-essential && \
   git clone https://github.com/dtcooper/fakehostname.git && \
   cd fakehostname && \
-  sudo make && sudo make install
+  sudo make && sudo make install && \
+  cd .. && rm -rf fakehostname && cd ~
 
-RUN git clone https://github.com/AmanoTeam/UserLixo /usr/src/app/Userlixo
-COPY . /usr/src/app/Userlixo
-WORKDIR /usr/src/app/Userlixo
+RUN git clone https://github.com/AmanoTeam/UserLixo UserLixo
+COPY . ./UserLixo
+WORKDIR ./UserLixo
 
 RUN pip3 install -U pip setuptools wheel
 RUN pip3 install -Ur requirements-heroku.txt
